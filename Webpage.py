@@ -1,18 +1,24 @@
-import sys
 import os
 from tkinter import *
 
 window=Tk()
 
 window.title("Face Recoginition system")
-window.geometry('550x500')
+window.geometry('550x300')
+window.configure(bg='white')
+
 
 def run():
     os.system('python C:/Users/anmol.r/PycharmProjects/FaceRecognition/face_recog.py')
 
-btn = Button(window, text="Mark Attendance!", bg="green", fg="white",command=run)
-exit_button = Button(window, text="Exit", bg="green", fg="white", command=window.destroy)
-btn.grid(column=5, row=5)
-exit_button.grid(column=6, row=6)
+
+l = Label(window, text = "Face Recoginition system", font="25px")
+
+btn = Button(window, text="Mark Entry", bg="green", fg="white",font="15px", command=run)
+sbtn = Button(window, text="Close Application", bg="red", fg="white", font="15px", command=window.destroy)
+
+l.pack(pady=30)
+btn.pack(pady=10)
+sbtn.pack()
 
 window.mainloop()

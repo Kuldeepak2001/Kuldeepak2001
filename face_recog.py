@@ -41,10 +41,11 @@ def markAttendance(name):
             nameList.append(entry[0])
 
         if name not in nameList:
+            print(f"Marking Attendance for {name}")
             now = datetime.now()
             time = now.strftime('%I:%M:%S:%p')
             date = now.strftime('%d-%B-%Y')
-            f.writelines(f'{name}, {time}, {date},')
+            f.writelines(f'\n{name}, {time}, {date},')
 
 
 def capture_image(webcam, frame, name):
