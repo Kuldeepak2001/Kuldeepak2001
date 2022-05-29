@@ -39,6 +39,7 @@ def markAttendance(name):
         for line in myDataList:
             entry = line.split(',')
             nameList.append(entry[0])
+
         if name not in nameList:
             now = datetime.now()
             time = now.strftime('%I:%M:%S:%p')
@@ -91,15 +92,18 @@ def main():
         except Exception:
             logging.info("cv2.error: Resize issue.")
 
-        cv2.imshow('webcam', img)
-        if cv2.waitKey(3) & 0xFF == ord('s'):
-            name = input('Enter the Unknown Person\'s Name: ')
-            capture_image(WebCam, img, name)
-            WebCam.release()
-            cv2.destroyAllWindows()
-            os.system("python C:/Users/anmol.r/PycharmProjects/FaceRecognition/face_recog.py")
-        elif cv2.waitKey(3) & 0xFF == ord('q'):
-            break
+        try:
+            cv2.imshow('webcam', img)
+            if cv2.waitKey(3) & 0xFF == ord('s'):
+                name = input('Enter the Unknown Person\'s Name: ')
+                capture_image(WebCam, img, name)
+                WebCam.release()
+                cv2.destroyAllWindows()
+                os.system("python C:/Users/anmol.r/PycharmProjects/FaceRecognition/face_recog.py")
+            elif cv2.waitKey(3) & 0xFF == ord('q'):
+                break
+        except Exception as e:
+            logging.info("please continue")
 
 
 if __name__ == '__main__':
