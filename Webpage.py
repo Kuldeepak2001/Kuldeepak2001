@@ -3,7 +3,7 @@ from tkinter import *
 
 window=Tk()
 
-window.title("Face Recoginition system")
+window.title("Face Recognition system")
 window.geometry('550x300')
 window.configure(bg='white')
 
