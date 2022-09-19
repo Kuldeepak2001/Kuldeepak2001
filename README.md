@@ -23,5 +23,5 @@ Classifier - Haar Cascades
 * Run generating selfie training data.ipynb.The script will open a camera window.Stand in front of the camera until recording of the face is completed.Input the person's name. Press q after having enough samples.
 * The default file where the features are stored is name.npy.
 * Run the Building Face Classifier.ipynb file!
-##Video Link
+## Video Link
 * https://github.com/Kuldeepak2001/Kuldeepak2001/tree/main/Demo_Video
